@@ -21,7 +21,9 @@ try:
             break
         keyboard.press(Key.caps_lock)
         keyboard.release(Key.caps_lock)
-        print(random.choice(messages.messages))
+        msg = random.choice(messages.messages)
+        current_time = time.strftime("%H:%M:%S", time.localtime())
+        print(f"{current_time} - {msg}")
 
         sleep_time = random.randint(MIN_INTERVAL, MAX_INTERVAL)
         time.sleep(sleep_time)
